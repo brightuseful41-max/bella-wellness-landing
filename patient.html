@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella — Modern Precision Wellness & Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#111111',
+              cream: '#FAF9F6',
+              lavender: '#D99BFF',
+              green: '#278E23',
+              gold: '#F5C842',
+              muted: '#6E6E73'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+   .gradient-wordmark {
+  display: inline-block;
+  background: linear-gradient(90deg, #278E23 0%, #6A9975 45%, #D99BFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+    .striped-bar {
+      background: repeating-linear-gradient(
+        -45deg,
+        #F5C842,
+        #F5C842 6px,
+        #FCE08B 6px,
+        #FCE08B 12px
+      );
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-lavender selection:text-brand-dark">
+
+  <nav class="sticky top-0 z-50 glass-card border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="font-serif text-3xl tracking-tight">Bella</span>
+        <span class="w-4 h-4 rounded-full bg-brand-lavender text-white flex items-center justify-center text-[10px] font-bold shadow-sm group-hover:scale-110 transition-transform">✓</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-sm font-medium text-brand-muted">
+        <a href="#outcomes" class="hover:text-brand-dark transition-colors">Clinical Outcomes</a>
+        <a href="#treatments" class="hover:text-brand-dark transition-colors">Treatments</a>
+        <a href="#growth" class="hover:text-brand-dark transition-colors">Patient Impact</a>
+        <a href="#assessment" class="hover:text-brand-dark transition-colors">Care Plan</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button onclick="openModal()" class="hidden sm:inline-block text-sm font-medium hover:opacity-70 transition-opacity">Member Login</button>
+        <button onclick="openModal()" class="bg-brand-dark text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-neutral-800 hover:shadow-lg transition-all active:scale-95">
+          Find My Treatment
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-8">
+          <div class="inline-flex items-center gap-2.5 bg-white px-4 py-2 rounded-full border border-black/5 shadow-sm">
+            <span class="text-brand-gold text-base">★</span>
+            <span class="text-xs font-semibold tracking-wide uppercase text-brand-dark">100,000+ Verified Patients</span>
+            <span class="text-black/20">•</span>
+            <span class="text-xs text-brand-muted">4.9★ TrustScore</span>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-7xl lg:text-[84px] leading-[0.96] tracking-tight text-brand-dark">
+            Testing Is About To Get A Whole Lot <span class="italic font-normal text-brand-green">Simpler.</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-brand-muted max-w-xl leading-relaxed font-normal">
+            No waiting rooms or doctor visits required—experience discreet, clinical-grade diagnostics and personalized care plans delivered in under 48 hours.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button onclick="openModal()" class="bg-brand-dark text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-neutral-800 hover:-translate-y-0.5 transition-all shadow-md">
+              Start Free Assessment
+            </button>
+            <a href="#outcomes" class="bg-white text-brand-dark border border-black/10 px-8 py-4 rounded-full text-sm font-semibold hover:bg-neutral-50 transition-all">
+              Explore Clinical Data
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-black/10 flex items-center gap-4 max-w-md">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Verified Patient" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow">
+            <div>
+              <p class="text-sm font-semibold text-brand-dark">“Loved the overall process—effortless from start to finish.”</p>
+              <p class="text-xs text-brand-green font-medium mt-0.5">100% Verified Patient Satisfaction</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-[32px] p-8 sm:p-10 shadow-[0_24px_60px_-15px_rgba(0,0,0,0.08)] border border-black/5 animate-float">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-1.5">
+                <span class="font-serif text-2xl">Bella</span>
+                <span class="w-3.5 h-3.5 rounded-full bg-brand-lavender text-white flex items-center justify-center text-[9px]">✓</span>
+              </div>
+              <span class="text-xs font-medium bg-brand-cream px-3 py-1 rounded-full text-brand-muted">Clinical Trial #B-402</span>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs font-medium text-brand-muted mb-2">
+              <span class="text-brand-gold text-sm">★</span>
+              <span>4.6 Average Rating • 453 Clinical Reviews</span>
+            </div>
+
+            <div class="font-serif text-7xl sm:text-8xl tracking-tight text-brand-dark leading-none my-3">
+              24.1%
+            </div>
+            <p class="text-sm text-brand-muted font-medium mb-8">Average Body Weight Reduction — Up to 52 Weeks</p>
+
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-2">
+                  <span>Diet & Lifestyle Only</span>
+                  <span class="text-brand-muted">6.8%</span>
+                </div>
+                <div class="w-full h-7 bg-neutral-100 rounded-lg overflow-hidden">
+                  <div class="h-full striped-bar rounded-lg transition-all duration-1000" style="width: 34%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-2">
+                  <span class="flex items-center gap-1.5">Bella GLP-1 Protocol <span class="px-2 py-0.5 text-[10px] bg-brand-lavender/25 text-brand-dark rounded-full">Most Effective</span></span>
+                  <span class="text-brand-dark">24.1%</span>
+                </div>
+                <div class="w-full h-7 bg-neutral-100 rounded-lg overflow-hidden">
+                  <div class="h-full bg-brand-lavender rounded-lg transition-all duration-1000" style="width: 96%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-2">
+                  <span>Bella NAD+ & Metabolic Diet</span>
+                  <span class="text-brand-green">17.5%</span>
+                </div>
+                <div class="w-full h-7 bg-neutral-100 rounded-lg overflow-hidden">
+                  <div class="h-full bg-brand-green rounded-lg transition-all duration-1000" style="width: 72%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between text-[11px] text-brand-muted font-medium pt-4 mt-4 border-t border-dashed border-black/10">
+              <span>0%</span>
+              <span>5%</span>
+              <span>10%</span>
+              <span>15%</span>
+              <span>20%+</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section id="outcomes" class="py-20 bg-white border-y border-black/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-green">Evidence-Based Medicine</span>
+          <h2 class="font-serif text-4xl sm:text-6xl leading-[1.05] text-brand-dark">
+            Built on Medical Expertise, Now Centered Around You.
+          </h2>
+          <p class="text-base sm:text-lg text-brand-muted leading-relaxed">
+            Every prescription and diagnostic kit is tailored to your unique biomarkers. Our board-certified clinicians review your profile within hours and ship directly to your door.
+          </p>
+
+          <div class="flex items-center gap-4 pt-2">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Chief Medical Officer" class="w-16 h-16 rounded-full object-cover border-2 border-brand-cream shadow-sm">
+            <div>
+              <p class="text-sm font-semibold text-brand-dark">Dr. Marcus Vance, MD</p>
+              <p class="text-xs text-brand-muted">Chief Medical Officer • Precision Endocrinology</p>
+              <svg class="w-28 h-8 mt-1 text-brand-dark" viewBox="0 0 140 40" fill="none">
+                <path d="M8 28C22 12 38 10 34 22C30 34 52 14 68 18C84 22 76 32 95 20C114 8 122 24 132 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div id="growth" class="lg:col-span-6">
+          <div class="bg-brand-cream rounded-[32px] p-8 sm:p-10 border border-black/5">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="font-serif text-2xl text-brand-dark">Community Reach & Adoption</h3>
+                <p class="text-xs text-brand-muted">Annual active patient consultations (2021 – 2026)</p>
+              </div>
+              <div class="flex items-center gap-4 text-xs font-semibold">
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-brand-lavender"></span> Women (18.2M)</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-brand-green"></span> Men (6.4M)</span>
+              </div>
+            </div>
+
+            <div class="relative pt-6">
+              <svg viewBox="0 0 500 220" class="w-full h-auto overflow-visible">
+                <line x1="0" y1="190" x2="500" y2="190" stroke="#E5E5E5" stroke-width="1"/>
+                <line x1="100" y1="20" x2="100" y2="190" stroke="#E5E5E5" stroke-dasharray="4 4"/>
+                <line x1="200" y1="20" x2="200" y2="190" stroke="#E5E5E5" stroke-dasharray="4 4"/>
+                <line x1="300" y1="20" x2="300" y2="190" stroke="#E5E5E5" stroke-dasharray="4 4"/>
+                <line x1="400" y1="20" x2="400" y2="190" stroke="#E5E5E5" stroke-dasharray="4 4"/>
+
+                <polygon points="0,190 70,130 160,135 280,45 410,190" fill="#D99BFF" opacity="0.9"/>
+                <polygon points="210,190 365,65 500,190" fill="#278E23" opacity="0.92"/>
+
+                <text x="165" y="155" fill="#111111" font-size="16" font-weight="700" text-anchor="middle">18.2M</text>
+                <text x="165" y="173" fill="#111111" font-size="12" font-weight="600" text-anchor="middle">W</text>
+
+                <text x="365" y="155" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">6.4M</text>
+                <text x="365" y="173" fill="#FFFFFF" font-size="12" font-weight="600" text-anchor="middle">M</text>
+
+                <text x="20" y="210" fill="#6E6E73" font-size="11">2021</text>
+                <text x="100" y="210" fill="#6E6E73" font-size="11" text-anchor="middle">2022</text>
+                <text x="200" y="210" fill="#6E6E73" font-size="11" text-anchor="middle">2023</text>
+                <text x="300" y="210" fill="#6E6E73" font-size="11" text-anchor="middle">2024</text>
+                <text x="400" y="210" fill="#6E6E73" font-size="11" text-anchor="middle">2025</text>
+                <text x="485" y="210" fill="#6E6E73" font-size="11" text-anchor="end">2026</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="treatments" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-muted">Tailored Protocols</span>
+          <h2 class="font-serif text-4xl sm:text-6xl mt-2">Select Your Care Pathway</h2>
+        </div>
+        <div class="inline-flex bg-white p-1.5 rounded-full border border-black/10 self-start">
+          <button onclick="filterCards('all')" id="btn-all" class="filter-btn bg-brand-dark text-white px-5 py-2 rounded-full text-xs font-semibold transition-all">All Programs</button>
+          <button onclick="filterCards('diagnostics')" id="btn-diagnostics" class="filter-btn text-brand-muted px-5 py-2 rounded-full text-xs font-semibold transition-all">Diagnostics</button>
+          <button onclick="filterCards('metabolic')" id="btn-metabolic" class="filter-btn text-brand-muted px-5 py-2 rounded-full text-xs font-semibold transition-all">Metabolic & Longevity</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div data-category="diagnostics" class="program-card bg-white rounded-[28px] p-8 border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-cream text-brand-dark">48-Hour Results</span>
+              <span class="font-serif text-2xl text-brand-dark">$79</span>
+            </div>
+            <h3 class="font-serif text-3xl mb-3">Complete At-Home Screening</h3>
+            <p class="text-sm text-brand-muted leading-relaxed mb-6">
+              Comprehensive, discreet lab-certified panel with physician follow-up and digital prescription access if needed.
+            </p>
+            <ul class="space-y-3 text-xs font-medium text-brand-dark mb-8">
+              <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> Free priority express shipping</li>
+              <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> CLIA-certified lab processing</li>
+              <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> 1-on-1 clinician review included</li>
+            </ul>
+          </div>
+          <button onclick="openModal('Complete At-Home Screening')" class="w-full py-3.5 rounded-full bg-brand-cream hover:bg-brand-dark hover:text-white text-brand-dark text-xs font-semibold transition-colors">
+            Order Kit Now
+          </button>
+        </div>
+
+        <div data-category="metabolic" class="program-card bg-brand-dark text-white rounded-[28px] p-8 shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-36 h-36 bg-brand-lavender/20 blur-3xl rounded-full"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-lavender text-brand-dark">24.1% Avg. Loss</span>
+              <span class="font-serif text-2xl text-white">$199<span class="text-xs font-sans text-neutral-400">/mo</span></span>
+            </div>
+            <h3 class="font-serif text-3xl mb-3">Bella GLP-1 Weight Protocol</h3>
+            <p class="text-sm text-neutral-300 leading-relaxed mb-6">
+              Clinically proven metabolic care combining personalized GLP-1 medication with continuous nutritional coaching.
+            </p>
+            <ul class="space-y-3 text-xs font-medium text-neutral-200 mb-8">
+              <li class="flex items-center gap-2"><span class="text-brand-lavender font-bold">✓</span> Personalized dosage titration</li>
+              <li class="flex items-center gap-2"><span class="text-brand-lavender font-bold">✓</span> Unlimited 24/7 care team messaging</li>
+              <li class="flex items-center gap-2"><span class="text-brand-lavender font-bold">✓</span> Cold-chain overnight delivery</li>
+            </ul>
+          </div>
+          <button onclick="openModal('Bella GLP-1 Weight Protocol')" class="w-full py-3.5 rounded-full bg-brand-lavender text-brand-dark hover:opacity-90 text-xs font-bold transition-opacity">
+            Check Eligibility
+          </button>
+        </div>
+
+        <div data-category="metabolic" class="program-card bg-white rounded-[28px] p-8 border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-green/10 text-brand-green">Cellular Vitality</span>
+              <span class="font-serif text-2xl text-brand-dark">$129<span class="text-xs font-sans text-brand-muted">/mo</span></span>
+            </div>
+            <h3 class="font-serif text-3xl mb-3">Bella NAD+ & Longevity</h3>
+            <p class="text-sm text-brand-muted leading-relaxed mb-6">
+              Restore cellular energy, sharpen cognitive focus, and optimize metabolic recovery with targeted NAD+ therapy.
+            </p>
+            <ul class="space-y-3 text-xs font-medium text-brand-dark mb-8">
+              <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> Pharmaceutical-grade formulation</li>
+              <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> Quarterly biomarker tracking</li>
+              <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> Pause or cancel anytime</li>
+            </ul>
+          </div>
+          <button onclick="openModal('Bella NAD+ & Longevity')" class="w-full py-3.5 rounded-full bg-brand-cream hover:bg-brand-dark hover:text-white text-brand-dark text-xs font-semibold transition-colors">
+            Start Protocol
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="assessment" class="py-20 bg-white border-t border-black/5">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-serif text-4xl sm:text-6xl mb-4">Estimate Your 6-Month Outcome</h2>
+      <p class="text-brand-muted text-sm sm:text-base mb-10">Adjust your starting weight to preview potential progress under the Bella GLP-1 protocol.</p>
+
+      <div class="bg-brand-cream rounded-[32px] p-8 sm:p-12 border border-black/5 text-left">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <label for="weightSlider" class="text-sm font-semibold">Current Weight: <span id="currentWeightDisplay" class="font-serif text-3xl ml-2">195 lbs</span></label>
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white border border-black/5">Based on 24.1% clinical average</span>
+        </div>
+
+        <input id="weightSlider" type="range" min="120" max="350" value="195" class="w-full accent-brand-dark cursor-pointer mb-10">
+
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl border border-black/5">
+            <p class="text-xs text-brand-muted mb-1">Projected Weight Loss</p>
+            <p id="projectedLoss" class="font-serif text-4xl text-brand-green">-47 lbs</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-black/5">
+            <p class="text-xs text-brand-muted mb-1">Target Goal Weight</p>
+            <p id="targetWeight" class="font-serif text-4xl text-brand-dark">148 lbs</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-black/5 flex flex-col justify-center">
+            <button onclick="openModal('Personalized Weight Plan')" class="w-full py-3.5 rounded-full bg-brand-dark text-white text-xs font-semibold hover:bg-neutral-800 transition-colors">
+              Claim My Plan →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pt-20 pb-10 bg-brand-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-4 gap-10 pb-16 border-b border-black/10 text-sm">
+        <div class="space-y-3">
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif text-2xl">Bella</span>
+            <span class="w-3.5 h-3.5 rounded-full bg-brand-lavender text-white flex items-center justify-center text-[9px]">✓</span>
+          </div>
+          <p class="text-xs text-brand-muted leading-relaxed">Modern telehealth diagnostics and precision treatments designed around your schedule.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3 text-xs uppercase tracking-wider">Treatments</h4>
+          <ul class="space-y-2 text-xs text-brand-muted">
+            <li><a href="#treatments" class="hover:text-brand-dark">At-Home Testing</a></li>
+            <li><a href="#treatments" class="hover:text-brand-dark">GLP-1 Weight Care</a></li>
+            <li><a href="#treatments" class="hover:text-brand-dark">NAD+ Longevity</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3 text-xs uppercase tracking-wider">Company</h4>
+          <ul class="space-y-2 text-xs text-brand-muted">
+            <li><a href="#outcomes" class="hover:text-brand-dark">Clinical Advisory</a></li>
+            <li><a href="#growth" class="hover:text-brand-dark">Patient Outcomes</a></li>
+            <li><a href="#assessment" class="hover:text-brand-dark">Privacy & HIPAA</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3 text-xs uppercase tracking-wider">Get Started</h4>
+          <button onclick="openModal()" class="bg-brand-dark text-white text-xs font-semibold px-5 py-3 rounded-full hover:bg-neutral-800 transition-colors">
+            Find My Treatment
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-8 select-none text-center">
+        <div class="font-serif text-[22vw] leading-[0.82] tracking-tight gradient-wordmark">
+          Bella
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-brand-muted pt-8 gap-4">
+        <p>© 2026 Bella Health Technologies Inc. All rights reserved.</p>
+        <p>HIPAA Compliant • Board-Certified Clinicians</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="consultationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-[28px] max-w-md w-full p-8 shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-sm font-bold hover:bg-neutral-200">✕</button>
+      <div class="flex items-center gap-1.5 mb-2">
+        <span class="font-serif text-2xl">Bella</span>
+        <span class="w-3.5 h-3.5 rounded-full bg-brand-lavender text-white flex items-center justify-center text-[9px]">✓</span>
+      </div>
+      <h3 id="modalTitle" class="font-serif text-3xl mb-2">Begin Your Consultation</h3>
+      <p class="text-xs text-brand-muted mb-6">Complete a 2-minute digital intake to match with a licensed clinician.</p>
+
+      <form onsubmit="handleSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold mb-1.5">Full Name</label>
+          <input type="text" required placeholder="Alex Morgan" class="w-full px-4 py-3 rounded-xl border border-black/10 text-sm focus:outline-none focus:border-brand-dark">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1.5">Email Address</label>
+          <input type="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl border border-black/10 text-sm focus:outline-none focus:border-brand-dark">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1.5">Primary Health Goal</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-black/10 text-sm bg-white focus:outline-none focus:border-brand-dark">
+            <option>Fast At-Home Diagnostic Testing</option>
+            <option>GLP-1 Medical Weight Management</option>
+            <option>NAD+ Energy & Longevity</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-full bg-brand-dark text-white text-sm font-semibold hover:bg-neutral-800 transition-colors mt-2">
+          Continue to Intake
+        </button>
+      </form>
+      <p id="formSuccess" class="hidden text-center text-xs font-semibold text-brand-green mt-4">✓ Intake started! Check your email for your clinician portal link.</p>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('weightSlider');
+    const currentDisplay = document.getElementById('currentWeightDisplay');
+    const lossDisplay = document.getElementById('projectedLoss');
+    const targetDisplay = document.getElementById('targetWeight');
+
+    slider.addEventListener('input', function () {
+      const weight = parseInt(this.value);
+      const loss = Math.round(weight * 0.241);
+      const target = weight - loss;
+      currentDisplay.textContent = `${weight} lbs`;
+      lossDisplay.textContent = `-${loss} lbs`;
+      targetDisplay.textContent = `${target} lbs`;
+    });
+
+    function filterCards(category) {
+      const cards = document.querySelectorAll('.program-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-dark', 'text-white');
+        btn.classList.add('text-brand-muted');
+      });
+
+      const activeBtn = document.getElementById(`btn-${category}`);
+      activeBtn.classList.add('bg-brand-dark', 'text-white');
+      activeBtn.classList.remove('text-brand-muted');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(title = 'Begin Your Consultation') {
+      const modal = document.getElementById('consultationModal');
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('formSuccess').classList.add('hidden');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('consultationModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').classList.remove('hidden');
+      setTimeout(() => {
+        closeModal();
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
